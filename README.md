@@ -1,31 +1,56 @@
-# capital-allocation-risk-engine
+# Portfolio Risk Simulation Engine
 
-A Monte Carlo-based simulation engine for evaluating portfolio allocation decisions under uncertainty using downside risk metrics (VaR, CVaR, drawdown), scenario stress testing, and risk-adjusted recommendation frameworks.
+A **quantitative finance project** that simulates portfolio performance under uncertainty and identifies optimal allocation strategies using risk-adjusted metrics. The engine is built using **Monte Carlo simulation** and incorporates **downside risk metrics** like **VaR**, **CVaR**, and **maximum drawdown**.
 
-## Objective
-Given limited capital and uncertain outcomes, identify allocations that maximize expected value while controlling downside risk.
+## 🚀 Objective
 
-## Methods
-- Monte Carlo simulation (1,000–10,000 trials)
-- Scenario analysis (volatility spike, correlation breakdown, market shocks)
+Evaluate portfolio allocation strategies under uncertainty and recommend an optimal allocation based on **risk-adjusted returns** using real market data (Apple and Microsoft).
+
+## ⚙️ Methodology
+
+- **Monte Carlo simulation** of portfolio returns (100–10,000 trials)
+- Bootstrapped sampling of asset return distributions
 - Risk metrics:
-  - Value at Risk (VaR)
-  - Conditional Value at Risk (CVaR)
-  - Max drawdown
-  - Sharpe ratio
-- Allocation comparison (conservative, balanced, aggressive)
+  - **Value at Risk (VaR)**
+  - **Conditional Value at Risk (CVaR)**
+  - **Maximum Drawdown**
+- Comparative analysis of multiple portfolio strategies
 
-## Folder Structure
-- `data/` – raw and processed datasets
-- `notebooks/` – step-by-step analyses
-- `src/` – core Python modules
-- `reports/` – charts, PDFs, decision memo
-- `app/` – optional Streamlit visualization
-- `tests/` – unit tests
-- `docs/` – methodology, assumptions, limitations
+## 📈 Key Outputs
 
-## Getting Started
-1. Clone repo
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
+- Simulated portfolio paths to visualize uncertainty over time
+- Distribution of outcomes with **VaR** and **CVaR** thresholds
+- **Drawdown analysis** to evaluate worst-case losses
+- **Risk vs return tradeoff visualization** across portfolios
+
+## 🧠 Key Insight
+
+The **Balanced portfolio** was dominated, exhibiting higher downside risk than the **Aggressive portfolio** while delivering lower expected returns.
+
+## ✅ Recommendation
+
+The **Aggressive portfolio** provided the strongest risk-return tradeoff, maximizing expected value without proportionally increasing downside risk.
+
+## 📁 Project Structure
+
+```text
+capital-allocation-risk-engine/
+├── README.md
+├── requirements.txt
+├── notebooks/
+│   ├── 03_monte_carlo_simulation.ipynb
+│   ├── 04_risk_metrics.ipynb
+│   ├── 05_allocation_comparison.ipynb
+│   └── 06_decision_summary.ipynb
+├── src/
+│   ├── simulator.py
+│   ├── risk_metrics.py
+│   ├── allocator.py
+├── reports/
+│   └── charts/
+│       ├── simulated_paths.png
+│       ├── var_cvar_chart.png
+│       ├── drawdown_chart.png
+│       └── allocation_frontier.png
+├── streamlit_app.py
+└── LICENSE
